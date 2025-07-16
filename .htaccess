@@ -1,0 +1,31 @@
+<IfModule mod_rewrite.c>
+
+# Enable the rewrite engine
+RewriteEngine On
+
+# Redirect non-www to www and force HTTPS
+RewriteCond %{HTTP_HOST} ^teqsman.com$ [NC]
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://www.teqsman.com/$1 [L,R=301]
+
+# Redirect non-www to www
+RewriteCond %{HTTP_HOST} ^teqsman.com$ [NC]
+RewriteRule ^(.*)$ https://www.teqsman.com/$1 [L,R=301]
+
+RewriteCond %{REQUEST_URI} ^/([^/]+)/([^/]+)$
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1/ [L,R=301]
+
+# Redirect specific URLs to include trailing slashes (only if not already present)
+RewriteCond %{REQUEST_URI} ^/(about|contact|service|review|blog|admin_panel/blogs/create|admin_panel/show_blogs|admin_panel/blog_update|admin_panel/blog_delete|admin_panel/review/create|admin_panel/show_reviews|admin_panel/review_update|admin_panel/review_delete|admin_panel/review)$
+RewriteRule ^(.*)$ /$1/ [L,R=301]
+
+# Normalize double slashes
+RewriteCond %{REQUEST_URI} ^(.*)//(.*)$
+RewriteRule ^ %1/%2 [R=301,L]
+
+# Redirect to the public folder (excluding assets)
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteCond %{REQUEST_URI} !\.(gif|jpg|png|css|js|ico)$
+RewriteRule ^(.*)$ /public/$1 [L]
+
+</IfModule>

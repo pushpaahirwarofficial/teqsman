@@ -1,0 +1,2 @@
+[02-Sep-2024 04:51:50 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\HomeController::blog() in /home1/itforsof/teqsman.com/app/Http/Controllers/HomeController.php on line 31
+[02-Sep-2024 05:20:11 UTC] PHP Fatal error:  Cannot use Illuminate\Http\Request as Request because the name is already in use in /home1/itforsof/teqsman.com/app/Http/Controllers/BlogController.php on line 8

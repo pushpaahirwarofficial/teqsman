@@ -1,0 +1,8 @@
+[27-Jun-2024 12:44:32 America/Boise] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home1/itforsof/teqsman.com/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home1/itforsof/teqsman.com/config/database.php on line 18
+[28-Jun-2024 00:58:28 America/Boise] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home1/itforsof/teqsman.com/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home1/itforsof/teqsman.com/config/database.php on line 18
